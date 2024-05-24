@@ -13,10 +13,10 @@ import 'reactflow/dist/style.css';          // Estilos por defecto para los diag
 import './App.css';                         // Estilos para los wrapers y drag and drop components
 import CustomNode from './CustomNode.jsx';  // Importamos el nodo personalizdo para representar las escenas
 import Sidebar from './Sidebar.jsx';        // Importamos el componente para mostrar el sidebar
-
+import SceneCard from './SceneCard.jsx';
 
 // Asignamos el componente CustomeNode.jsx como el tipo de nodo que utlizara el diagrama
-const nodeTypes = { customNode: CustomNode } 
+const nodeTypes = { customNode: CustomNode }
 
 // Esto permite asignar un id a a los nodos creados con la herramienta de drag and drop 
 let id = 0;
@@ -122,10 +122,14 @@ export default function Flow() {
     );
 
     return (
-        <div className="dndflow">
+        <div className="builderContainer">
+            <SceneCard />
+
+
+            <div className='dndflow' >
             <ReactFlowProvider>
                 <Sidebar />
-                <div className="reactflow-wrapper" ref={reactFlowWrapper} style={{ height: 800, width: 1200 }}>
+                <div className="reactflow-wrapper" ref={reactFlowWrapper} style={{ height: 400, width: 1200 }}>
                     <ReactFlow
                         nodes={nodes}
                         edges={edges}
@@ -144,6 +148,10 @@ export default function Flow() {
                     </ReactFlow>
                 </div>
             </ReactFlowProvider>
+
+            </div>
+
+            
         </div>
     )
 }
