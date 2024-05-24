@@ -60,7 +60,7 @@ export default function Flow() {
     const [nodes, setNodes] = useState(initialNodes);
     const [edges, setEdges] = useState(initialEdges);
     const [reactFlowInstance, setReactFlowInstance] = useState(null);
-
+    const onNodeClick = (event, node) => console.log('click node', node);
     // Para agregar escenas por medio de la herramienta de drag and drop
 
     const onDragOver = useCallback((event) => {
@@ -141,7 +141,9 @@ export default function Flow() {
                         onInit={setReactFlowInstance}
                         onDrop={onDrop}
                         onDragOver={onDragOver}
+                        onNodeClick={onNodeClick}
                         fitView
+                        
                     >
                         <Controls />
                         <Background style={{ backgroundColor: 'whitesmoke' }} />
