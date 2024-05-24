@@ -1,9 +1,12 @@
 import React from 'react'
 import './App.css'
-export default function SceneCard() {
+export default function SceneCard({data}) {
+
+
     return (
         <div className='sceneCard' >
-            <h4>Title</h4>
+            <h4>{data && data.label}</h4>
+            
             <div
                 style={{
                     backgroundColor: '#d0d0d0',

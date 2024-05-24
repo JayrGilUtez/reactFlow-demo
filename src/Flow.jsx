@@ -60,7 +60,17 @@ export default function Flow() {
     const [nodes, setNodes] = useState(initialNodes);
     const [edges, setEdges] = useState(initialEdges);
     const [reactFlowInstance, setReactFlowInstance] = useState(null);
-    const onNodeClick = (event, node) => console.log('click node', node);
+
+    const [selectedNodeData, setSelectedNodeData] = useState(null);
+    const onNodeClick = (event, node) => {
+        if (node.type === 'customNode') {
+            setSelectedNodeData(node.data);
+        }
+    };
+
+
+
+    //const onNodeClick = (event, node) => console.log('click node', node);
     // Para agregar escenas por medio de la herramienta de drag and drop
 
     const onDragOver = useCallback((event) => {
@@ -123,7 +133,7 @@ export default function Flow() {
 
     return (
         <div className="builderContainer">
-            <SceneCard />
+            <SceneCard data={selectedNodeData} />
 
 
             <div className='dndflow' >
@@ -142,6 +152,7 @@ export default function Flow() {
                         onDrop={onDrop}
                         onDragOver={onDragOver}
                         onNodeClick={onNodeClick}
+                        
                         fitView
                         
                     >
