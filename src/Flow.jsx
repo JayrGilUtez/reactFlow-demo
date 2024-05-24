@@ -1,26 +1,30 @@
 import React, { useCallback, useState, useRef } from 'react'
 import ReactFlow, {
-    ReactFlowProvider,
-    Controls,
-    Background,
-    addEdge,
-    applyEdgeChanges,
-    applyNodeChanges,
-    updateEdge,
+    ReactFlowProvider,  // Para poder acceder al estado interno del diagrama estando fuera del componente
+    Controls,           // Para mostrar los controles de zoom y centrado
+    Background,         // Agrega el fondo punteado al diagrama
+    addEdge,            // Para hacer nuevas conexiones 
+    applyEdgeChanges,   // Para modificar las conexiones
+    applyNodeChanges,   // Para modificar la posicion de los nodos nuevos nodos (arrastrar los nodos) 
+    updateEdge,         // Cambiar el origen o destino de una conexion
 
 } from "reactflow";
-import 'reactflow/dist/style.css';
-import './App.css';
-import CustomNode from './CustomNode.jsx';
-import Sidebar from './Sidebar.jsx';
+import 'reactflow/dist/style.css';          // Estilos por defecto para los diagrams
+import './App.css';                         // Estilos para los wrapers y drag and drop components
+import CustomNode from './CustomNode.jsx';  // Importamos el nodo personalizdo para representar las escenas
+import Sidebar from './Sidebar.jsx';        // Importamos el componente para mostrar el sidebar
 
 
-const nodeTypes = { customNode: CustomNode }
+// Asignamos el componente CustomeNode.jsx como el tipo de nodo que utlizara el diagrama
+const nodeTypes = { customNode: CustomNode } 
 
+// Esto permite asignar un id a a los nodos creados con la herramienta de drag and drop 
 let id = 0;
 const getId = () => `dndnode_${id++}`;
 
+// Creamos la funcion principal del componente Flow.jsx
 export default function Flow() {
+    // Inicialisamos nodos, conexiones y otros valores para mostrar un diagrama de ejemplo
     const reactFlowWrapper = useRef(null);
     const initialNodes = [
         {
@@ -57,6 +61,8 @@ export default function Flow() {
     const [edges, setEdges] = useState(initialEdges);
     const [reactFlowInstance, setReactFlowInstance] = useState(null);
 
+    // Para agregar escenas por medio de la herramienta de drag and drop
+
     const onDragOver = useCallback((event) => {
         event.preventDefault();
         event.dataTransfer.dropEffect = 'move';
@@ -68,7 +74,7 @@ export default function Flow() {
 
             const type = event.dataTransfer.getData('application/reactflow');
 
-            // check if the dropped element is valid
+            // Validamos si el nodo que se suelta en el diagrama es valido 
             if (typeof type === 'undefined' || !type) {
                 return;
             }
@@ -90,6 +96,12 @@ export default function Flow() {
         [reactFlowInstance],
     );
 
+    /**
+     * Crear, modificar y eliminar conexiones y nodos
+     * 
+     * Esto permite manipular libremente el flujo de la historia 
+     * por medio del diagrama
+     */
     const onNodesChange = useCallback(
         (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
         [],
@@ -113,7 +125,6 @@ export default function Flow() {
         <div className="dndflow">
             <ReactFlowProvider>
                 <Sidebar />
-
                 <div className="reactflow-wrapper" ref={reactFlowWrapper} style={{ height: 800, width: 1200 }}>
                     <ReactFlow
                         nodes={nodes}
