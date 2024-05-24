@@ -5,7 +5,7 @@ export default function SceneCard({data}) {
 
     return (
         <div className='sceneCard' >
-            <h4>{data && data.label}</h4>
+            <h4>{data && data.title}</h4>
             
             <div
                 style={{

@@ -31,25 +31,37 @@ export default function Flow() {
             id: 'node-1',
             type: 'customNode',
             position: { x: 150, y: 0 },
-            data: { label: 'node 1' },
+            data: { 
+                label: 'node 1',
+                title: 'Inicio'
+             },
         },
         {
             id: 'node-2',
             type: 'customNode',
             position: { x: 0, y: 100 },
-            data: { label: 'node 2' },
+            data: { 
+                label: 'node 2',
+                title: 'Escena 2'
+             },
         },
         {
             id: 'node-3',
             type: 'customNode',
             position: { x: 150, y: 200 },
-            data: { label: 'node 3' },
+            data: { 
+                label: 'node 3',
+                title: 'Escena 3'
+             },
         },
         {
             id: 'node-4',
             type: 'customNode',
             position: { x: 300, y: 300 },
-            data: { label: 'node 4' },
+            data: { 
+                label: 'node 4',
+                title: 'Escena 4'
+             },
         },
     ]
     const initialEdges = [
