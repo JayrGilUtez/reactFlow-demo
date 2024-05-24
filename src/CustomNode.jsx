@@ -1,6 +1,4 @@
 import React from 'react'
-
-import { useCallback } from 'react';
 import { Handle, Position } from 'reactflow';
 
 const ahandleStyle = { top: 20 };
