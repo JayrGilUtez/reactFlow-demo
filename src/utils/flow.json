@@ -1,0 +1,187 @@
+{
+    "nodes": [
+      {
+        "id": "node-1",
+        "type": "customNode",
+        "position": {
+          "x": 0,
+          "y": 100
+        },
+        "data": {
+          "label": "node 1",
+          "title": "Inicio"
+        },
+        "width": 112,
+        "height": 52,
+        "positionAbsolute": {
+          "x": 0,
+          "y": 100
+        }
+      },
+      {
+        "id": "node-2",
+        "type": "customNode",
+        "position": {
+          "x": 150,
+          "y": 0
+        },
+        "data": {
+          "label": "node 2",
+          "title": "Escena 2"
+        },
+        "width": 112,
+        "height": 52,
+        "positionAbsolute": {
+          "x": 150,
+          "y": 0
+        }
+      },
+      {
+        "id": "node-3",
+        "type": "customNode",
+        "position": {
+          "x": 166.45600000000002,
+          "y": 162.44160000000005
+        },
+        "data": {
+          "label": "node 3",
+          "title": "Escena 3"
+        },
+        "width": 112,
+        "height": 52,
+        "selected": false,
+        "positionAbsolute": {
+          "x": 166.45600000000002,
+          "y": 162.44160000000005
+        },
+        "dragging": false
+      },
+      {
+        "id": "node-4",
+        "type": "customNode",
+        "position": {
+          "x": 415.91307200000006,
+          "y": 136.24329480000006
+        },
+        "data": {
+          "label": "node 4",
+          "title": "Final"
+        },
+        "width": 112,
+        "height": 52,
+        "selected": false,
+        "positionAbsolute": {
+          "x": 415.91307200000006,
+          "y": 136.24329480000006
+        },
+        "dragging": false
+      },
+      {
+        "id": "node_0",
+        "type": "customNode",
+        "position": {
+          "x": 418.5522410000001,
+          "y": 225.7576904
+        },
+        "data": {
+          "label": "customNode node",
+          "title": "Nueva escena"
+        },
+        "width": 112,
+        "height": 52,
+        "selected": true,
+        "positionAbsolute": {
+          "x": 418.5522410000001,
+          "y": 225.7576904
+        },
+        "dragging": false
+      },
+      {
+        "id": "node_1",
+        "type": "customNode",
+        "position": {
+          "x": 448.04537500000004,
+          "y": -28.15119999999996
+        },
+        "data": {
+          "label": "customNode node",
+          "title": "Nueva escena"
+        },
+        "width": 112,
+        "height": 52,
+        "selected": false,
+        "positionAbsolute": {
+          "x": 448.04537500000004,
+          "y": -28.15119999999996
+        },
+        "dragging": false
+      },
+      {
+        "id": "node_2",
+        "type": "customNode",
+        "position": {
+          "x": 429.653375,
+          "y": 52.77359999999999
+        },
+        "data": {
+          "label": "customNode node",
+          "title": "Nueva escena"
+        },
+        "width": 112,
+        "height": 52,
+        "selected": false,
+        "positionAbsolute": {
+          "x": 429.653375,
+          "y": 52.77359999999999
+        },
+        "dragging": false
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "node-1",
+        "sourceHandle": "a",
+        "target": "node-2"
+      },
+      {
+        "id": "e2",
+        "source": "node-1",
+        "sourceHandle": "b",
+        "target": "node-3"
+      },
+      {
+        "source": "node-3",
+        "sourceHandle": "a",
+        "target": "node-4",
+        "targetHandle": "input",
+        "id": "reactflow__edge-node-3a-node-4input"
+      },
+      {
+        "source": "node-3",
+        "sourceHandle": "b",
+        "target": "node_0",
+        "targetHandle": "input",
+        "id": "reactflow__edge-node-3b-node_0input"
+      },
+      {
+        "source": "node-2",
+        "sourceHandle": "a",
+        "target": "node_1",
+        "targetHandle": "input",
+        "id": "reactflow__edge-node-2a-node_1input"
+      },
+      {
+        "source": "node-2",
+        "sourceHandle": "b",
+        "target": "node_2",
+        "targetHandle": "input",
+        "id": "reactflow__edge-node-2b-node_2input"
+      }
+    ],
+    "viewport": {
+      "x": 179.5358158355411,
+      "y": 98.46744325628316,
+      "zoom": 0.9337301811100406
+    }
+  }
