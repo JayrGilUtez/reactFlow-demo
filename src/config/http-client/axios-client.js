@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const SERVER_URL = import.meta.SERVER_URL;
+const SERVER_URL =  import.meta.env.VITE_APP_SERVER_URL;
 
 const APP_JSON = 'application/json';
 
@@ -9,8 +9,8 @@ const AxiosClient = axios.create({
 });
 
 const requestHandler = (req) => {
-    req.heders['Acept'] = APP_JSON;
-    req.heders['Content-Type'] = APP_JSON;
+    req.headers['Accept'] = APP_JSON;
+    req.headers['Content-Type'] = APP_JSON;
     return req;
 };
 
