@@ -8,6 +8,6 @@ import StoriesManager from './components/stories/StoriesManager.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <StoriesManager />
+    <App />
   </React.StrictMode>,
 )
