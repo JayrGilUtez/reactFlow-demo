@@ -8,7 +8,7 @@ export default function AppRouter() {
         createRoutesFromElements(
             <>
                 <Route path='/' element={<StoriesManager />} />
-                <Route path='/stories/' element={<Flow />} />
+                <Route path='/story/:story_id' element={<Flow />} />
             </>
         )
     )
