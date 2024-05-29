@@ -4,13 +4,15 @@ import StoriesManager from '../components/stories/StoriesManager.jsx'
 import Flow from '../Flow.jsx';
 
 export default function AppRouter() {
-    return (
-        <Router>
-            <Routes>
+    const router = createBrowserRouter(
+        createRoutesFromElements(
+            <>
                 <Route path='/' element={<StoriesManager />} />
-                <Route path='/stories/:id' element={ <Flow />} />
-            </Routes>
-
-        </Router>
+                <Route path='/stories/' element={<Flow />} />
+            </>
+        )
+    )
+    return (
+        <RouterProvider router={router} />
     )
 }
