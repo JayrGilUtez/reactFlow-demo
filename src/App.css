@@ -91,6 +91,10 @@
 
 .dndflow .dndnode.output {
   border-color: #ff0072;
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+  
 }
 
 .dndflow .reactflow-wrapper {
