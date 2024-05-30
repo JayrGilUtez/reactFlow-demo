@@ -22,22 +22,30 @@ const nodeTypes = { customNode: CustomNode }
 
 // Esto permite asignar un id a a los nodos creados con la herramienta de drag and drop 
 // TODO arreglar esta funcion que esta causando que no se puedan agregar nuevos nodos en un principio
- /**
-  * Sucede que el id generado comienza en 0 e incrementa de 1 en 1
-  * Esto causa que los primeros ids generados coincidan con el id de los nodos existentes
-  * Es por eso que solo se agrega un nuevo nodo si el numero de intentos que hacemos para agregar un nodo
-  * es mayor al numero de nodos que existen.
-  * 
-  * Ejemplo: 
-  * En diagrama con 3 nodos deberiamos realizar el drag and drop 4 veces para agregar un nuevo nodo
-  * es por eso que se debe arreglar esta funcion.
-  * 
-  * Posible solucion: generar el id con ayuda de un generador de numeros aleatorios.
-  *  
-  */
+/**
+ * Sucede que el id generado comienza en 0 e incrementa de 1 en 1
+ * Esto causa que los primeros ids generados coincidan con el id de los nodos existentes
+ * Es por eso que solo se agrega un nuevo nodo si el numero de intentos que hacemos para agregar un nodo
+ * es mayor al numero de nodos que existen.
+ * 
+ * Ejemplo: 
+ * En diagrama con 3 nodos deberiamos realizar el drag and drop 4 veces para agregar un nuevo nodo
+ * es por eso que se debe arreglar esta funcion.
+ * 
+ * Posible solucion: generar el id con ayuda de un generador de numeros aleatorios.
+ *  
+ */
 let id = 0;
 const getId = () => `node_${id++}`;
 
+function generateCustomID() {
+    const timestamp = Date.now().toString(36);
+    const random = Math.random().toString(36);
+    return `${timestamp}-${random}`;
+}
+
+const uniqueID = generateCustomID();
+console.log(uniqueID)
 
 // TODO arreglar el problema de las historias con diagrama undefined
 /**
@@ -48,6 +56,16 @@ const getId = () => `node_${id++}`;
  * 
  * Posible solucion, inicializar todos los diagrams con valores vacios
  *  pero no nulos o indefinidos
+ * 
+ * Se pueden inicializar asi:
+ 
+ "diagram": {
+    "nodes": [],
+    "edges": [],
+    "viewport": {}
+  }
+
+  
  */
 
 // Creamos la funcion principal del componente Flow.jsx
@@ -72,7 +90,7 @@ export default function Flow() {
                 setStory(response);
                 setNodes(response.diagram.nodes);
                 setEdges(response.diagram.edges);
-                console.log(response.diagram.nodes);
+                console.log(response.diagram);
 
             } catch (error) {
                 console.error('Error trying to get the story with id: ', story_id);
@@ -191,7 +209,7 @@ export default function Flow() {
                 y: event.clientY,
             });
             const newNode = {
-                id: getId(),
+                id: generateCustomID(),
                 type,
                 position,
                 data: { label: `${type} node`, title: 'Nueva escena' },
