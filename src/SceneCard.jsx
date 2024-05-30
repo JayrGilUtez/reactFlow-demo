@@ -1,7 +1,6 @@
 import React from 'react'
 import './App.css'
 export default function SceneCard({ data }) {
-    
     return (
         <div className='sceneCard' >
             <h4>{data && data.title}</h4>
@@ -15,9 +14,7 @@ export default function SceneCard({ data }) {
                     alignContent: 'center'
 
                 }}
-            >
-                CONTENT
-
+            >    
             </div>
 
             <div style={

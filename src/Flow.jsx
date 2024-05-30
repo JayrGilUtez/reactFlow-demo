@@ -65,7 +65,7 @@ console.log(uniqueID)
     "viewport": {}
   }
 
-  
+
  */
 
 // Creamos la funcion principal del componente Flow.jsx
@@ -77,7 +77,7 @@ export default function Flow() {
     const [nodes, setNodes] = useState([]);
     const [edges, setEdges] = useState([]);
 
-    //console.log(story_id);
+
 
     // Para traer todos los datos de una historia
     useEffect(() => {
@@ -102,55 +102,7 @@ export default function Flow() {
 
     }, []);
 
-
-
-
-    // Inicialisamos nodos, conexiones y otros valores para mostrar un diagrama de ejemplo
-
-
-    // const initialNodes = [
-    //     {
-    //         id: 'node-1',
-    //         type: 'customNode',
-    //         position: { x: 0, y: 100 },
-    //         data: {
-    //             label: 'node 1',
-    //             title: 'Inicio'
-    //         },
-    //     },
-    //     {
-    //         id: 'node-2',
-    //         type: 'customNode',
-    //         position: { x: 150, y: 0 },
-    //         data: {
-    //             label: 'node 2',
-    //             title: 'Escena 2'
-    //         },
-    //     },
-    //     {
-    //         id: 'node-3',
-    //         type: 'customNode',
-    //         position: { x: 150, y: 200 },
-    //         data: {
-    //             label: 'node 3',
-    //             title: 'Escena 3'
-    //         },
-    //     },
-    //     {
-    //         id: 'node-4',
-    //         type: 'customNode',
-    //         position: { x: 300, y: 300 },
-    //         data: {
-    //             label: 'node 4',
-    //             title: 'Final'
-    //         },
-    //     },
-    // ]
-    // const initialEdges = [
-    //     { id: 'e1', source: 'node-1', sourceHandle: 'a', target: 'node-2' },
-    //     { id: 'e2', source: 'node-1', sourceHandle: 'b', target: 'node-3' }
-    // ]
-
+    
     const reactFlowWrapper = useRef(null);
 
     const [reactFlowInstance, setReactFlowInstance] = useState(null);
@@ -180,7 +132,8 @@ export default function Flow() {
     const onNodeClick = (event, node) => {
         if (node.type === 'customNode') {
             setSelectedNodeData(node.data);
-            console.log(node.id);
+            //console.log(node.id);
+
         }
     };
 
@@ -190,6 +143,7 @@ export default function Flow() {
     const onDragOver = useCallback((event) => {
         event.preventDefault();
         event.dataTransfer.dropEffect = 'move';
+       
     }, []);
 
     const onDrop = useCallback(
@@ -216,6 +170,7 @@ export default function Flow() {
             };
 
             setNodes((nds) => nds.concat(newNode));
+           
         },
         [reactFlowInstance],
     );
@@ -237,9 +192,12 @@ export default function Flow() {
     );
 
     const onConnect = useCallback(
-        (params) => setEdges((eds) => addEdge(params, eds)),
+        (params) => {
+          setEdges((eds) => addEdge(params, eds));
+          saveDiagram();
+        },
         [],
-    );
+      );
 
     const onEdgeUpdate = useCallback(
         (oldEdge, newConnection) => setEdges((els) => updateEdge(oldEdge, newConnection, els)),
@@ -276,12 +234,13 @@ export default function Flow() {
                             onDrop={onDrop}
                             onDragOver={onDragOver}
                             onNodeClick={onNodeClick}
+                            maxZoom={1}
 
                             fitView
 
                         >
                             <Panel position="top-left">
-                                <button onClick={saveDiagram}>Save Diagram</button>
+                                <button onClick={saveDiagram}>Guardar</button>
                             </Panel>
                             <Controls />
                             <Background style={{ backgroundColor: 'whitesmoke' }} />

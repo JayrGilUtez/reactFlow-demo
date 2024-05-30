@@ -9,12 +9,12 @@ export default () => {
   };
 
   return (
-    <aside style={{ backgroundColor: '#1e1e1e'}}>
+    <aside style={{ backgroundColor: '#1e1e1e', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
       <div className="description">
         <h3>Herramientas</h3>
       </div>
       <div className="dndnode output" onDragStart={(event) => onDragStart(event, 'customNode')} draggable>
-        Nueva escena
+        Nueva escena 
       </div>
       
     </aside>
