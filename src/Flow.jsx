@@ -17,6 +17,9 @@ import Sidebar from './Sidebar.jsx';        // Importamos el componente para mos
 import SceneCard from './SceneCard.jsx';
 import { useParams } from 'react-router-dom';
 import AxiosClient from './config/http-client/axios-client.js';
+
+
+
 // Asignamos el componente CustomeNode.jsx como el tipo de nodo que utlizara el diagrama
 const nodeTypes = { customNode: CustomNode }
 
@@ -102,7 +105,7 @@ export default function Flow() {
 
     }, []);
 
-    
+
     const reactFlowWrapper = useRef(null);
 
     const [reactFlowInstance, setReactFlowInstance] = useState(null);
@@ -143,7 +146,7 @@ export default function Flow() {
     const onDragOver = useCallback((event) => {
         event.preventDefault();
         event.dataTransfer.dropEffect = 'move';
-       
+
     }, []);
 
     const onDrop = useCallback(
@@ -170,7 +173,7 @@ export default function Flow() {
             };
 
             setNodes((nds) => nds.concat(newNode));
-           
+
         },
         [reactFlowInstance],
     );
@@ -193,11 +196,11 @@ export default function Flow() {
 
     const onConnect = useCallback(
         (params) => {
-          setEdges((eds) => addEdge(params, eds));
-          saveDiagram();
+            setEdges((eds) => addEdge(params, eds));
+            saveDiagram();
         },
         [],
-      );
+    );
 
     const onEdgeUpdate = useCallback(
         (oldEdge, newConnection) => setEdges((els) => updateEdge(oldEdge, newConnection, els)),
