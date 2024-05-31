@@ -38,21 +38,21 @@ export default function FilesUploader() {
     };
     return (
         <div className="files-uploader-container">
-        <label htmlFor="file-upload" className="files-uploader-button">
-          Upload File
-        </label>
-        <input id="file-upload" type="file" style={{ display: 'none' }} onChange={handleFileUpload} />
-        <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-          {files.map((file, index) => (
-            <div key={index} className="file">
-              {file.name.endsWith('.mp4') ? (
-                <video src={file.dataUrl} style={{ width: '40px', height: '40px', borderRadius: 5, marginTop: 5, marginBottom: 5, marginLeft: 5, marginRight: 5 }} />
-              ) : (
-                <img src={file.dataUrl} alt={file.name} style={{ width: '40px', height: '40px', borderRadius: 5, marginTop: 5, marginBottom: 5, marginLeft: 5, marginRight: 5 }} />
-              )}
+            <label htmlFor="file-upload" className="files-uploader-button">
+                Upload File
+            </label>
+            <input id="file-upload" type="file" style={{ display: 'none' }} onChange={handleFileUpload} />
+            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                {files.map((file, index) => (
+                    <div key={index} className="file">
+                        {file.name.endsWith('.mp4') ? (
+                            <video src={file.dataUrl} style={{ width: '40px', height: '40px', borderRadius: 5, marginTop: 5, marginBottom: 5, marginLeft: 5, marginRight: 5 }} />
+                        ) : (
+                            <img src={file.dataUrl} alt={file.name} style={{ width: '40px', height: '40px', borderRadius: 5, marginTop: 5, marginBottom: 5, marginLeft: 5, marginRight: 5 }} />
+                        )}
+                    </div>
+                ))}
             </div>
-          ))}
         </div>
-      </div>
     );
 }
