@@ -10,3 +10,17 @@
     
 }
 
+.files-uploader-button {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: medium;
+
+    /* background-color: #009475; */
+    background-color: #ff0072;
+}

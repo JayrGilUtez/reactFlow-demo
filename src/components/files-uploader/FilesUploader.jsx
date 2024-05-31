@@ -39,7 +39,7 @@ export default function FilesUploader() {
     return (
         <div className="files-uploader-container">
             <label htmlFor="file-upload" className="files-uploader-button">
-                Upload File
+                Subir
             </label>
             <input id="file-upload" type="file" style={{ display: 'none' }} onChange={handleFileUpload} />
             <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
