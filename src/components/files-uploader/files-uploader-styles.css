@@ -1,0 +1,12 @@
+.files-uploader-container {
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    width: 200px;
+    height: 250px;
+    margin-bottom: 10px;
+    color: black;
+    
+}
+
