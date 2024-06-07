@@ -1,0 +1,149 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.workingArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: green; */
+    width: 1370px;
+    height: 889px;
+
+
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aqua; */
+    width: 1320px;
+    height: 690px;
+}
+
+.scene {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 2px solid whitesmoke;
+    width: 1340px;
+    height: 690px;
+}
+
+.toolsBar {
+    display: flex;
+    flex-direction: row;
+    background-color: whitesmoke;
+    align-items: center;
+    width: 1370px;
+    height: 50px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.addContentButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 35px;
+    background-color: white;
+    border-radius: 7px;
+    margin-left: 10px;
+    border: 1px solid gray;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 350px;
+    /* background-color: whitesmoke;
+    border-radius: 5px; */
+    margin-top: 10px;
+}
+
+.contentWrapper {
+    width: 100%;
+    max-width: 720px;
+    margin: 0px auto;
+    padding-inline: 0px;
+}
+
+.content img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: auto;
+    height: auto;
+    font-size: 32px;
+    margin-top: 10px;
+    /* margin-bottom: 10px;
+    margin-left: 10px; */
+}
+
+.question {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.description {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    font-size: 18px;
+    font-weight: lighter;
+    font-style: italic;
+    color: grey;
+    margin-top: 10px;
+}
+
+.optionsContainer {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    width: 250px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.optionButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
