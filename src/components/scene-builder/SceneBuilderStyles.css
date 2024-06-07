@@ -1,6 +1,6 @@
 .mainContainer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background-color: white;
     width: 100%;
     height: 100%;
@@ -15,10 +15,8 @@
     justify-content: center;
     align-items: center;
     /* background-color: green; */
-    width: 1370px;
-    height: 889px;
-
-
+    width: 100%;
+    height: 100%;
 }
 
 .mainContent {
@@ -27,8 +25,8 @@
     justify-content: center;
     align-items: center;
     /* background-color: aqua; */
-    width: 1320px;
-    height: 690px;
+    width: 100%;
+    height: 100%;
 }
 
 .scene {
@@ -37,7 +35,7 @@
     justify-content: center;
     align-items: center;
     background-color: white;
-    border: 2px solid whitesmoke;
+    border: 2px solid #e5e5e5;
     width: 1340px;
     height: 690px;
 }
@@ -45,7 +43,7 @@
 .toolsBar {
     display: flex;
     flex-direction: row;
-    background-color: whitesmoke;
+    background-color: #f7f7f6;
     align-items: center;
     width: 1370px;
     height: 50px;
@@ -59,10 +57,11 @@
     align-items: center;
     width: 180px;
     height: 35px;
-    background-color: white;
-    border-radius: 7px;
+    background-color: #fafafa;
+    border-radius: 10px;
     margin-left: 10px;
-    border: 1px solid gray;
+    margin-right: 10px;
+    border: 1px solid #cbcbca;
 }
 
 .content {
@@ -129,7 +128,7 @@
     display: flex;
     flex-direction: row;
     height: 50px;
-    width: 250px;
+    width: 600px;
     justify-content: space-between;
     margin-bottom: 10px;
 }
@@ -140,10 +139,57 @@
     justify-content: center;
     align-items: center;
     background-color: whitesmoke;
-    width: 100px;
+    width: 290px;
     height: 40px;
     font-size: 18px;
     font-weight: bold;
     color: black;
 }
 
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 293px;
+    height: 480px;
+    border-radius: 10px;
+    background-color: #f7f7f6;
+}
+
+.sidebarScene {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 220px;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: #e9e9e9;
+}
+
+.sidebarSceneIcon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 30px;
+    margin-left: 10px;
+    background-color: #b5ddfc;
+    border-radius: 5px;
+}
+
+.flowButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 35px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid #cbcbca;
+    color: black;
+    font-weight: 400;
+}

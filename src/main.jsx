@@ -10,6 +10,6 @@ import SceneBuilder from './components/scene-builder/SceneBuilder.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <SceneBuilder />
+    <App />
   </React.StrictMode>,
 )
