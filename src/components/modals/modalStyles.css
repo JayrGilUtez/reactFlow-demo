@@ -1,0 +1,88 @@
+.modal-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    width: 80%;
+    height: 90%;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.close {
+    cursor: pointer;
+}
+
+.modal-options-container {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.column-options-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.option-card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    
+}
+
+.scene-option-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #b5ddfc ;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.image-option-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #f3d8ad ;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.video-option-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #a8e6bd ;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
