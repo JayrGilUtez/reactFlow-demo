@@ -11,7 +11,7 @@ export default function AppRouter() {
             <>
                 <Route path='/' element={<StoriesManager />} />
                 <Route path='/story/:story_id' element={<SceneBuilder />} />
-                <Route path='/story/flow' element={<StoryFlow />} />
+                <Route path='/story/flow/:story_id' element={<StoryFlow />} />
             </>
         )
     )
